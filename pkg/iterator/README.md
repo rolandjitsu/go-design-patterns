@@ -11,9 +11,8 @@ for c.Next() {
     v := c.Value()
     ...
 }
-
 ```
 
-Check the tests for a few implementation examples.
+One of the examples in this package illustrates the use of [channels](https://gobyexample.com/channels), which is a more common pattern in Go, but it doesn't exactly implement the iterator pattern and it's not meant for low latency algorithms (just run the benchmarks to see a comparison).
 
-One of the examples illustrates using [channels](https://gobyexample.com/channels), which is a more common pattern in Go, but doesn't exactly implement the iterator pattern and it's not meant for low latency algorithms (just run the benchmarks to see a comparison).
+Check the tests for more implementation examples.
