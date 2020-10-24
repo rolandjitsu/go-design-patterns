@@ -9,9 +9,14 @@ import (
 func TestIntRange(t *testing.T) {
 	r := NewIntRange(0, 4)
 
+	var i int
+	var done bool
 	var items []int
 
-	for i, done := r.Next(); !done; i, done = r.Next() {
+	for {
+		if i, done = r.Next(); done {
+			break
+		}
 		items = append(items, i)
 	}
 
