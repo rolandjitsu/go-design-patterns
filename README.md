@@ -9,7 +9,7 @@
     * [Factory](./pkg/factory/README.md)
     * [Prototype]()
 * Behavioural
-    * [Command]()
+    * [Command](./pkg/command/README.md)
     * [Iterator](./pkg/iterator/README.md)
 
 ## Test
