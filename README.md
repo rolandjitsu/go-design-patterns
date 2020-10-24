@@ -5,7 +5,7 @@
 
 ## Design Patterns
 * Creational
-    * [Singleton]()
+    * [Singleton](./pkg/singleton/README.md)
     * [Factory](./pkg/factory/README.md)
     * [Prototype]()
 * Behavioural
