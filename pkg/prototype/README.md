@@ -3,7 +3,7 @@
 The [prototype](https://en.wikipedia.org/wiki/Prototype_pattern) pattern is a design pattern that implies creating clones of objects instead of creating new instances.
 
 This pattern can be used when:
-* creating instances of an object is time and resource intensive
+* creating instances of an object is time consuming or resource intensive
 * making copies of an object is complex (deep copies, private members, etc)
 * the object is exposed as an interface
 
