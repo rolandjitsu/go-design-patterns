@@ -1,6 +1,6 @@
 # Singleton Patern
 
-The [singleton](https://www.geeksforgeeks.org/singleton-design-pattern/) pattern is a design pattern that restricts the instantiation of a class to one object.
+The [singleton](https://en.wikipedia.org/wiki/Singleton_pattern) pattern is a design pattern that restricts the instantiation of a class to one object.
 What that means is simply that you have to share the same object throughout the program.
 
 The simplest example of this is a DB connection:

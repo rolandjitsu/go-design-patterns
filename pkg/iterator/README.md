@@ -1,6 +1,6 @@
 # Iterator Patern
 
-The [iterator](https://www.geeksforgeeks.org/iterator-pattern/) pattern is a commonly used design pattern in software.
+The [iterator](https://en.wikipedia.org/wiki/Iterator_pattern) pattern is a commonly used design pattern in software.
 It entails that a collection must provide an iterator that can be used to iterate through its objects.
 
 To put it in simple terms:

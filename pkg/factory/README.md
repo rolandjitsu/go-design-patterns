@@ -1,6 +1,6 @@
 # Factory Patern
 
-The [factory](https://www.geeksforgeeks.org/design-patterns-set-2-factory-method/) pattern is a design pattern used to create different types of objects using the same interface without exposing how the object is created.
+The [factory](https://en.wikipedia.org/wiki/Factory_method_pattern) pattern is a design pattern used to create different types of objects using the same interface without exposing how the object is created.
 
 In Go, this can be achieved with the `interface` type:
 ```go

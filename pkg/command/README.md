@@ -1,6 +1,6 @@
 # Command Patern
 
-The [command](https://www.geeksforgeeks.org/command-pattern/) pattern is a design pattern that encapsulates an action or request as an object. And it's commonly associated with terms like receiver, command and invoker.
+The [command](https://en.wikipedia.org/wiki/Command_pattern) pattern is a design pattern that encapsulates an action or request as an object. And it's commonly associated with terms like receiver, command and invoker.
 
 Usually, the invoker doesn't know anything about the implementation details of the command or receiver, it just knows the command interface and its only responsibility is to invoke the command and do bookkeeping of commands.
 
