@@ -8,6 +8,8 @@
     * [Singleton](./pkg/singleton/README.md)
     * [Factory](./pkg/factory/README.md)
     * [Prototype](./pkg/prototype/README.md)
+* Structural
+    * [Adapter](./pkg/adapter/README.md)
 * Behavioural
     * [Command](./pkg/command/README.md)
     * [Iterator](./pkg/iterator/README.md)
