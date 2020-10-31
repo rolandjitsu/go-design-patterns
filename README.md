@@ -10,6 +10,7 @@
     * [Singleton](./pkg/singleton/README.md)
 * Structural
     * [Adapter](./pkg/adapter/README.md)
+    * [Proxy](./pkg/proxy/README.md)
 * Behavioural
     * [Command](./pkg/command/README.md)
     * [Iterator](./pkg/iterator/README.md)
