@@ -1,7 +1,7 @@
 # Go Design Patterns
 > A collection of design patterns implemented in Go
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/rolandjitsu/go-design-patterns/Test?label=tests&style=flat-square)](https://github.com/rolandjitsu/go-design-patterns/actions?query=workflow%3ATest)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/rolandjitsu/go-design-patterns/test.yml?branch=main&style=flat-square)](https://github.com/rolandjitsu/go-design-patterns/actions?query=workflow%3ATest)
 
 ## Design Patterns
 * Creational
