@@ -1,4 +1,4 @@
-# Command Patern
+# Command Pattern
 
 The [command](https://en.wikipedia.org/wiki/Command_pattern) pattern is a design pattern that encapsulates an action or request as an object. And it's commonly associated with terms like receiver, command and invoker.
 
@@ -9,7 +9,7 @@ The command is the object that knows about the receiver and its responsibility i
 ```go
 p := &Pinger{}
 ping := &Ping{}
-pingCmd = &PingCmd{ping}
+pingCmd := &PingCmd{ping}
 
 p.Execute(pingCmd)
 
@@ -17,7 +17,6 @@ type Pinger struct {}
 
 func (p *Pinger) Execute(c Cmd) {
     c.Execute()
-    ...
 }
 
 type Cmd interface {
@@ -27,7 +26,7 @@ type Cmd interface {
 type Ping struct {}
 
 func (p *Ping) Send() {
-    ...
+    // ...
 }
 
 type PingCmd struct {

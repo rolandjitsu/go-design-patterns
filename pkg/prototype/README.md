@@ -1,4 +1,4 @@
-# Prototype Patern
+# Prototype Pattern
 
 The [prototype](https://en.wikipedia.org/wiki/Prototype_pattern) pattern is a design pattern that implies creating clones of objects instead of creating new instances.
 
@@ -10,7 +10,7 @@ This pattern can be used when:
 For example:
 ```go
 obj := NewObj(1)
-copy := obj.Clone()
+objCopy := obj.Clone()
 
 func NewObj(prop int) MyObj {
     return &myObj{PubProp: prop}
@@ -21,13 +21,13 @@ type MyObj interface {
 }
 
 type myObj struct {
-    PubProp int
+    PubProp  int
     privProp int
 }
 
-func (o *myObj) Clone() *MyObj {
+func (o *myObj) Clone() MyObj {
     return &myObj{
-        PubProp: o.Prop,
+        PubProp:  o.PubProp,
         privProp: o.privProp,
     }
 }

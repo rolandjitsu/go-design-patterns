@@ -1,4 +1,4 @@
-# Factory Patern
+# Factory Pattern
 
 The [factory](https://en.wikipedia.org/wiki/Factory_method_pattern) pattern is a design pattern used to create different types of objects using the same interface without exposing how the object is created.
 

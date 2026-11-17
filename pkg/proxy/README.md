@@ -1,7 +1,6 @@
-# Proxy Patern
+# Proxy Pattern
 
-The [proxy](https://en.wikipedia.org/wiki/Proxy_pattern) pattern is a design pattern in which a class (**proxy**) acts as an interface to something else.
-The proxy could be an interface to anything: a network connection, another class, a file, etc.
+The [proxy](https://en.wikipedia.org/wiki/Proxy_pattern) pattern is a design pattern in which an object acts as an interface to something else. The proxy could be an interface to anything: a network connection, another class, a file, etc.
 
 A proxy can be useful in a variety of situations:
 * A frontend for load balancing
@@ -9,15 +8,15 @@ A proxy can be useful in a variety of situations:
 * Caching layer
 * etc
 
-A good example of a proxy that can be used as a load balancer (and other purposes) is [nginx](https://www.nginx.com/).
+A good example of a proxy that can be used as a load balancer (and other purposes) is [nginx](https://www.nginx.com/) or the Go standard library [net/http/httputil](https://pkg.go.dev/net/http/httputil) (`ReverseProxy`).
 
-To illustrate how to use this pattern in Go, let's implement a simple caching layer for files to speed up multiple reads for the same files:
+In this package, we implement a simple caching layer for files:
 ```go
-package fileproxy
+package proxy
 
 import (
 	"io"
-	"io/ioutil"
+	"os"
 	"sync"
 )
 
@@ -51,7 +50,7 @@ func (fp *fileProxy) Read(b []byte) (n int, err error) {
 	mux.RUnlock()
 
 	var data []byte
-	data, err = ioutil.ReadFile(fp.Name)
+	data, err = os.ReadFile(fp.Name)
 	if err == nil {
 		copy(b, data)
 		mux.Lock()
@@ -62,18 +61,12 @@ func (fp *fileProxy) Read(b []byte) (n int, err error) {
 
 	return
 }
-
-var _ FileProxy = &fileProxy{}
 ```
 
-If we run a simple benchmark to compare how caching improves read operations we can see a pretty significant improvement over running `ioutil.ReadFile()` alone:
-```bash
-❯ go test -bench=. ./pkg/proxy/...
-goos: darwin
-goarch: amd64
-pkg: github.com/rolandjitsu/go-design-patterns/pkg/proxy
+If we run a simple benchmark to compare how caching improves read operations we can see a significant improvement over running `os.ReadFile()` alone:
+```text
 BenchmarkReadFile-8        87010             13601 ns/op
 BenchmarkFileProxy-8    52101362                21.9 ns/op
 ```
 
-Check the code for examples.
+Check the code and tests for details.

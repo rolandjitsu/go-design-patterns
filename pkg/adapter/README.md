@@ -1,4 +1,4 @@
-# Adapter Patern
+# Adapter Pattern
 
 The [adapter](https://en.wikipedia.org/wiki/Adapter_pattern) pattern is a design pattern that allows the interface of a class to be used as another interface.
 
@@ -10,7 +10,7 @@ db := &Conn{Backend: bkd}
 
 db.Query()
 
-...
+// ...
 
 type Conn struct {
     Backend Backend
@@ -27,13 +27,13 @@ type Backend interface {
 type SQLBackend struct {}
 
 func (db *SQLBackend) Query() ([]byte, error) {
-    ...
+    // ...
 }
 
 type NoSQLBackend struct {}
 
 func (db *NoSQLBackend) Query() ([]byte, error) {
-    ...
+    // ...
 }
 ```
 

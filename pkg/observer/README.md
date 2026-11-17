@@ -1,12 +1,12 @@
-# Observer Patern
+# Observer Pattern
 
 The [observer](https://en.wikipedia.org/wiki/Observer_pattern) pattern is a design pattern in which an object (a **subject**) keeps track of all of its dependents (**observers**) and notifies them of any state changes.
 
-In Go, the closest example of this pattern are the builtin [channels](https://tour.golang.org/concurrency/2) and the use of [goroutines](https://gobyexample.com/goroutines):
+In Go, the closest example of this pattern are the builtin [channels](https://go.dev/tour/concurrency/2) and the use of [goroutines](https://gobyexample.com/goroutines):
 ```go
 sub := make(chan interface{})
 
-go func(c <-chan interface{}>) {
+go func(c <-chan interface{}) {
     for data := range c {
         fmt.Println(data)
     }

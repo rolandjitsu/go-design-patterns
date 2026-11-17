@@ -1,36 +1,21 @@
-# Singleton Patern
+# Singleton Pattern
 
-The [singleton](https://en.wikipedia.org/wiki/Singleton_pattern) pattern is a design pattern that restricts the instantiation of a class to one object.
-What that means is simply that you have to share the same object throughout the program.
+The [singleton](https://en.wikipedia.org/wiki/Singleton_pattern) pattern is a design pattern that restricts the instantiation of a class (struct in Go) to a single instance.
 
-The simplest example of this is a DB connection:
+This can be useful when you want to share an object across your program, e.g database connections, configs, etc.
+
 ```go
-// main.go
-import (
-    "mydb"
-    "stuff"
-)
+type Thanos struct {}
 
-func main() {
-    c := &mydb.Conn{}
-    stuff := stuff.GetTheStuff(c)
-    ...
-}
+var thanos *Thanos
+var once sync.Once
 
-// mydb/conn.go
-package mydb
-type Conn struct {}
-
-func (c *Conn) Query(q string) {
-    ...
-}
-
-// stuff/stuff.go
-package stuff
-
-func GetTheStuff(c *Conn) {
-    c.Query()
+func GetThanos() *Thanos {
+    once.Do(func() {
+        thanos = &Thanos{}
+    })
+    return thanos
 }
 ```
 
-Check the code for more examples.
+Check the code and tests for examples.

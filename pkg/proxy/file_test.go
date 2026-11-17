@@ -1,7 +1,7 @@
 package proxy
 
 import (
-	"io/ioutil"
+	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -27,7 +27,7 @@ func TestFileProxy(t *testing.T) {
 
 func BenchmarkReadFile(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		_, err := ioutil.ReadFile(testdata)
+		_, err := os.ReadFile(testdata)
 		if err != nil {
 			b.Fatal(err)
 		}

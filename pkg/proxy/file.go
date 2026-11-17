@@ -2,7 +2,7 @@ package proxy
 
 import (
 	"io"
-	"io/ioutil"
+	"os"
 	"sync"
 )
 
@@ -36,7 +36,7 @@ func (fp *fileProxy) Read(b []byte) (n int, err error) {
 	mux.RUnlock()
 
 	var data []byte
-	data, err = ioutil.ReadFile(fp.Name)
+	data, err = os.ReadFile(fp.Name)
 	if err == nil {
 		copy(b, data)
 		mux.Lock()

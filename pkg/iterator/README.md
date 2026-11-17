@@ -1,18 +1,29 @@
-# Iterator Patern
+# Iterator Pattern
 
 The [iterator](https://en.wikipedia.org/wiki/Iterator_pattern) pattern is a commonly used design pattern in software.
 It entails that a collection must provide an iterator that can be used to iterate through its objects.
 
-To put it in simple terms:
+Traditionally in Go, iterators were implemented with custom structs or channels:
 ```go
-c := MakeIterator()
+c := NewIntRange(1, 10)
 
-for c.Next() {
-    v := c.Value()
-    ...
+for {
+    v, ok := c.Next()
+    if !ok {
+        break
+    }
+    // process v
 }
 ```
 
-One of the examples in this package illustrates the use of [channels](https://gobyexample.com/channels), which is a more common pattern in Go, but it doesn't exactly implement the iterator pattern and it's not meant for low latency algorithms (just run the benchmarks to see a comparison).
+## Go 1.23+ Range-Over-Func Iterators
 
-Check the tests for more implementation examples.
+Go 1.23 added native support for function iterators via `iter.Seq` and `iter.Seq2`. You can consume them with standard `for ... := range`:
+
+```go
+for v := range NewSeqIntRange(1, 10) {
+    fmt.Println(v)
+}
+```
+
+Check the code and tests for implementation examples and benchmarks.
